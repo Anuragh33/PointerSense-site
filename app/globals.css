@@ -6,8 +6,8 @@
   --border:      rgba(0,0,0,0.08);
   --accent:      #6366f1;
   --accent-dim:  #4f46e5;
-  --text:        #111827;
-  --muted:       #6b7280;
+  --text:        #0f172a;
+  --muted:       #374151;
   --faint:       rgba(99,102,241,0.05);
 }
 
@@ -185,7 +185,7 @@ nav {
   padding: 24px 28px;
   font-size: 15px;
   line-height: 1.7;
-  color: #9ca3af;
+  color: #4b5563;
   text-align: left;
   position: relative;
   user-select: none;
@@ -511,7 +511,7 @@ section + section { border-top: 1px solid var(--border); }
 
 .no-releases strong {
   display: block;
-  color: #374151;
+  color: #111827;
   font-size: 17px;
   margin-bottom: 8px;
 }
