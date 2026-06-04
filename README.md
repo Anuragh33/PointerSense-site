@@ -62,7 +62,9 @@ It works in any macOS app that exposes text through Accessibility — browsers, 
 |---|---|
 | **Works everywhere** | Browsers, terminals, editors, PDFs, anywhere macOS exposes text. |
 | **Six AI providers** | OpenAI, Anthropic, Google Gemini, Groq, Ollama Cloud, Command Code. Bring your own key. |
-| **Privacy-first** | No screenshots. No keystroke logging. No history by default. Only the selected text leaves your Mac. |
+| **Auto-updates** | Install once. PointerSense checks for new versions on launch and installs signed updates in-place. No manual re-download. |
+| **Keys in Keychain** | API keys live in macOS Keychain, not plaintext on disk. |
+| **Global shortcut** | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> explains the current selection from anywhere — works even when paused or in Manual mode. |
 | **Three detection modes** | Selected only (default), Hover any text, or Smart (selection-first with hover fallback). |
 | **Three trigger modes** | Automatic, Hold ⌥ Option (opt-in per selection), or Manual. |
 | **Optional speech** | Have answers read aloud via the native macOS `say` engine. |
@@ -120,9 +122,11 @@ PointerSense doesn't host any models. You bring your own API key, and PointerSen
 System Settings ─▶ Privacy & Security ─▶ Accessibility ─▶ enable PointerSense
 ```
 
-**5.** Open **Setup** from the menu bar icon, go to **AI Providers**, and paste an API key.
+**5.** Open **Setup** from the menu bar icon, go to **AI Providers**, and paste an API key. macOS will prompt for Keychain access the first time — choose **Always Allow**.
 
 That's it. Select text anywhere on your Mac to test.
+
+> **Note:** This is the last time you'll have to come here. PointerSense v0.4.0+ checks for updates on launch and installs them in-place after your approval, with cryptographically-signed bundles.
 
 ---
 

@@ -153,23 +153,23 @@ export default async function Home() {
               },
               {
                 icon: "🤖",
-                title: "Multiple AI providers",
-                body: "OpenAI, Anthropic, Google Gemini, and Ollama Cloud. Bring your own key and model.",
+                title: "Six AI providers",
+                body: "OpenAI, Anthropic, Gemini, Groq, Ollama Cloud, and Command Code. Groq + gpt-oss-20b runs ~1000 tokens/sec.",
               },
               {
                 icon: "🔒",
                 title: "Privacy-first",
-                body: "No screenshots. No history by default. Only the text you select leaves your device.",
+                body: "API keys stored in macOS Keychain. No screenshots, no keystroke logging, no history by default. Only the text you select leaves your Mac.",
               },
               {
                 icon: "🔊",
                 title: "Optional speech",
-                body: "Have answers read aloud using native macOS speech. Ideal for accessibility or hands-free reading.",
+                body: "Have answers read aloud using native macOS speech. Great for accessibility or hands-free reading.",
               },
               {
-                icon: "⚡",
-                title: "Instant response",
-                body: "Pill tooltip appears within seconds of selection. Compact answer, expandable on demand.",
+                icon: "🔄",
+                title: "Auto-updates",
+                body: "Install once. PointerSense checks for new versions on launch and installs signed updates in-place — no manual re-download.",
               },
               {
                 icon: "🎛️",
@@ -193,17 +193,18 @@ export default async function Home() {
       <section id="install">
         <div className="container">
           <p className="section-label">Install</p>
-          <h2 className="section-title">Get running in under a minute</h2>
+          <h2 className="section-title">Install once. Update forever.</h2>
           <p className="section-sub">
-            PointerSense is a small unsigned macOS app. You'll need to grant
-            Accessibility permission once so it can read selected text.
+            Set up takes under a minute. After this first download, PointerSense
+            installs its own updates — you'll never have to come back to this
+            page unless you want to.
           </p>
           <div className="install-steps">
             {[
               {
                 n: 1,
                 title: "Download the .dmg",
-                body: "Grab the latest release below. The build is for Apple Silicon Macs (M1, M2, M3, M4).",
+                body: "Grab the latest release below. Builds are for Apple Silicon Macs (M1, M2, M3, M4). This is your one and only manual download.",
               },
               {
                 n: 2,
@@ -218,7 +219,7 @@ export default async function Home() {
               {
                 n: 4,
                 title: "Add an API key",
-                body: "Open Setup from the menu bar and paste a key for OpenAI, Anthropic, Gemini, Groq, Ollama Cloud, or Command Code.",
+                body: "Open Setup from the menu bar and paste a key for OpenAI, Anthropic, Gemini, Groq, Ollama Cloud, or Command Code. Keys go straight to macOS Keychain.",
               },
             ].map((s) => (
               <div key={s.n} className="install-step">
