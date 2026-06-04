@@ -6,7 +6,7 @@ Live at **[pointersense-site.vercel.app](https://pointersense-site.vercel.app)**
 
 ## What this is
 
-A static Next.js site with one job: tell people what PointerSense does and give them the latest macOS download. Release data is pulled live from the GitHub Releases API of the [Anuragh33/PointerSense](https://github.com/Anuragh33/PointerSense) repository, so the download links update automatically whenever a new version is published.
+A static Next.js site with one job: tell people what PointerSense does and give them the latest macOS download. The PointerSense app source lives in a private repo; release artifacts (.dmg builds) are mirrored to this public site repo so the download links are reachable without authentication. The site reads its own release list via the GitHub Releases API and renders it on the home page.
 
 ## Stack
 
@@ -54,9 +54,22 @@ lib/
 
 ## How release data flows
 
-`lib/releases.ts` calls `https://api.github.com/repos/Anuragh33/PointerSense/releases` with a 5-minute ISR window. The home page renders the latest release prominently in the hero (download button) and lists every release in a card below. Each release card auto-detects the `.dmg` asset and shows its size and download link.
+`lib/releases.ts` calls `https://api.github.com/repos/Anuragh33/PointerSense-site/releases` with a 5-minute ISR window. The home page renders the latest release prominently in the hero (download button) and lists every release in a card below. Each release card auto-detects the `.dmg` asset and shows its size and download link.
 
-Publishing a new release on the [PointerSense](https://github.com/Anuragh33/PointerSense) repo with `gh release create` is enough — the site picks it up automatically.
+## Publishing a new app release
+
+The app source lives in a private repo, but the build artifacts must be downloadable by anyone. So releases are published on **this** repo, not the app repo:
+
+```bash
+# After building the .dmg in the app repo
+gh release create v0.2.0 \
+  /path/to/PointerSense_0.2.0_aarch64.dmg \
+  --repo Anuragh33/PointerSense-site \
+  --title "PointerSense v0.2.0" \
+  --notes "Release notes here"
+```
+
+The site picks it up automatically within 5 minutes (or instantly on the next deploy).
 
 ## Deployment
 

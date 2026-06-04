@@ -18,7 +18,7 @@ export default async function Home() {
             <a href="#install">Install</a>
             <a href="#releases">Releases</a>
             <a
-              href="https://github.com/Anuragh33/PointerSense"
+              href="https://github.com/Anuragh33/PointerSense-site"
               target="_blank"
               rel="noopener noreferrer"
               className="nav-gh"
@@ -59,7 +59,7 @@ export default async function Home() {
               </a>
             )}
             <a
-              href="https://github.com/Anuragh33/PointerSense"
+              href="https://github.com/Anuragh33/PointerSense-site"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost"
@@ -266,7 +266,7 @@ export default async function Home() {
           </p>
           <div className="footer-links">
             <a
-              href="https://github.com/Anuragh33/PointerSense"
+              href="https://github.com/Anuragh33/PointerSense-site"
               target="_blank"
               rel="noopener noreferrer"
             >

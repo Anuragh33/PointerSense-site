@@ -26,7 +26,7 @@ export async function getReleases(): Promise<Release[]> {
   }
 
   const res = await fetch(
-    "https://api.github.com/repos/Anuragh33/PointerSense/releases",
+    "https://api.github.com/repos/Anuragh33/PointerSense-site/releases",
     { headers, next: { revalidate: 300 } }
   );
 
