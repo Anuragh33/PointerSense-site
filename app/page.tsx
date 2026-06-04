@@ -15,6 +15,7 @@ export default async function Home() {
           <div className="nav-links">
             <a href="#how-it-works">How it works</a>
             <a href="#features">Features</a>
+            <a href="#install">Install</a>
             <a href="#releases">Releases</a>
             <a
               href="https://github.com/Anuragh33/PointerSense"
@@ -32,9 +33,9 @@ export default async function Home() {
       <section className="hero">
         <div className="container">
           <div className="hero-badge">
-            <span>macOS</span>
+            <span>macOS · Apple Silicon</span>
             <span style={{ opacity: 0.4 }}>•</span>
-            <span>Select text. Get answers.</span>
+            <span>{releases.length > 0 ? `v${releases[0].tag_name.replace(/^v/, "")} available` : "Coming soon"}</span>
           </div>
           <h1>
             Your cursor,<br />
@@ -50,7 +51,7 @@ export default async function Home() {
                 href={releases[0].assets[0].browser_download_url}
                 className="btn-primary"
               >
-                <DownloadIcon /> Download {releases[0].tag_name}
+                <DownloadIcon /> Download {releases[0].tag_name} for macOS
               </a>
             ) : (
               <a href="#releases" className="btn-primary">
@@ -66,6 +67,11 @@ export default async function Home() {
               <GitHubIcon /> Star on GitHub
             </a>
           </div>
+          {releases.length > 0 && releases[0].assets.length > 0 && (
+            <p className="hero-meta">
+              {formatBytes(releases[0].assets[0].size)} · Apple Silicon (M1+) · Released {formatDate(releases[0].published_at)}
+            </p>
+          )}
 
           {/* Tooltip demo mockup */}
           <div className="hero-demo">
@@ -176,6 +182,50 @@ export default async function Home() {
                 <div>
                   <h3>{f.title}</h3>
                   <p>{f.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Install ─────────────────────────── */}
+      <section id="install">
+        <div className="container">
+          <p className="section-label">Install</p>
+          <h2 className="section-title">Get running in under a minute</h2>
+          <p className="section-sub">
+            PointerSense is a small unsigned macOS app. You'll need to grant
+            Accessibility permission once so it can read selected text.
+          </p>
+          <div className="install-steps">
+            {[
+              {
+                n: 1,
+                title: "Download the .dmg",
+                body: "Grab the latest release below. The build is for Apple Silicon Macs (M1, M2, M3, M4).",
+              },
+              {
+                n: 2,
+                title: "Open and drag to Applications",
+                body: "If macOS warns about an unidentified developer, right-click PointerSense and choose Open, then confirm.",
+              },
+              {
+                n: 3,
+                title: "Grant Accessibility",
+                body: "On first launch, open System Settings → Privacy & Security → Accessibility and enable PointerSense.",
+              },
+              {
+                n: 4,
+                title: "Add an API key",
+                body: "Open Setup from the menu bar and paste a key for OpenAI, Anthropic, Gemini, Groq, Ollama Cloud, or Command Code.",
+              },
+            ].map((s) => (
+              <div key={s.n} className="install-step">
+                <div className="install-step-num">{s.n}</div>
+                <div>
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
                 </div>
               </div>
             ))}

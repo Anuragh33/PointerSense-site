@@ -171,6 +171,13 @@ nav {
 
 .btn-ghost:hover { border-color: #9ca3af; color: var(--text); }
 
+.hero-meta {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
 /* ── Tooltip Demo ───────────────────────────── */
 .hero-demo {
   margin: 64px auto 0;
@@ -371,6 +378,53 @@ section + section { border-top: 1px solid var(--border); }
   line-height: 1.5;
 }
 
+/* ── Install ────────────────────────────────── */
+.install-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.install-step {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 22px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.install-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+
+.install-step h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 5px;
+  letter-spacing: -0.01em;
+}
+
+.install-step p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 /* ── Releases ───────────────────────────────── */
 .releases-list {
   margin-top: 52px;
@@ -547,7 +601,7 @@ footer {
 
 /* ── Responsive ──────────────────────────────── */
 @media (max-width: 700px) {
-  .steps, .features-grid { grid-template-columns: 1fr; }
+  .steps, .features-grid, .install-steps { grid-template-columns: 1fr; }
   .hero { padding: 64px 0 52px; }
   .nav-links { display: none; }
   .demo-pill { width: 280px; }
